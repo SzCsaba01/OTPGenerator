@@ -1,0 +1,33 @@
+# Node.js / Angular
+node_modules/
+dist/
+tmp/
+package-lock.json
+npm-debug.log
+yarn-error.log
+angular.json
+tsconfig.json
+tslint.json
+.idea/
+.vscode/
+*.swp
+
+# .NET / ASP.NET
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]evelopment/
+[Dd]eploy/
+[Dd]ebug*/ 
+[Dd]ist*/
+bin/
+obj/
+
+.vs/
+.vscode/
+
+# ASP.NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/

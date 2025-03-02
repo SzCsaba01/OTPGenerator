@@ -1,0 +1,5 @@
+<div class="alert-container">
+  <div *ngFor="let msg of messages" class="alert" [ngClass]="{'alert-success': msg.type === 'success', 'alert-danger': msg.type === 'error'}">
+    <p>{{ msg.message }}</p>
+  </div>
+</div>

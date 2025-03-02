@@ -1,0 +1,62 @@
+.alert-container {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 9999;
+  width: 18rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+  .alert {
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideInRight 0.5s forwards;
+
+    &-success {
+      background-color: #50C878;  
+      color: white;
+    }
+
+    &-danger {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    p {
+      margin: 0;
+      flex-grow: 1; 
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .alert-danger p {
+    font-style: italic;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

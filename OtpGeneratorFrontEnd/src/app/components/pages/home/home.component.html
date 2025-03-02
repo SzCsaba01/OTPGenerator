@@ -1,0 +1,32 @@
+<div class="otp-validation">
+    <h2 class="otp-validation__title">Generate and Enter One Time Password</h2>
+    <p class="otp-validation__instructions">
+      Click "Generate One Time Password" to receive a one-time password. Then, enter it below to verify.
+      If the OTP has expired or was not received, click "Generate New One Time Password" to get a new one.
+    </p>
+    <div class="generate-container">
+      <button class="generate-container__button" (click)="generateOTP()">Generate One Time Password</button>
+    </div>
+  
+    <div *ngIf="otpGenerated">
+      <form [formGroup]="otpForm">
+        <div class="otp-validation__inputs" formArrayName="otp">
+          <input class="otp-input"
+                 *ngFor="let control of otp; let i = index"
+                 type="text"
+                 maxlength="1"
+                 [formControlName]="i"
+                 (input)="onInput($event, i)"
+                 (keydown)="onKeyDown($event, i)"
+                 (click)="onClick($event)">
+        </div>
+      </form>
+      <p class="countdown" *ngIf="remainingTime > 0">
+        One Time Password expires in: <strong>{{ remainingTime }} seconds</strong>
+      </p>
+      <p class="countdown expired" *ngIf="remainingTime <= 0">
+        One Time Password has expired. Please generate a new one.
+      </p>
+    </div>
+  </div>
+  
