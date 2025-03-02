@@ -5,8 +5,6 @@ tmp/
 package-lock.json
 npm-debug.log
 yarn-error.log
-angular.json
-tsconfig.json
 tslint.json
 .idea/
 .vscode/
@@ -31,3 +29,5 @@ obj/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+
+logs/
